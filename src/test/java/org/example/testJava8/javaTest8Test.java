@@ -13,4 +13,11 @@ public class javaTest8Test {
         int actual = javaTest8.twoNumber(5, 3);
         Assertions.assertEquals(expected, actual);
     }
+    @ParameterizedTest
+    @CsvFileSource(files = "src/test/resources/javaTest8.csv")
+    public void resultNumbersReturn(int expected, int a, int b) {
+        javaTest8 javaTest8 = new javaTest8();
+        int actual = javaTest8.twoNumber(3, 5);
+        Assertions.assertEquals(expected, actual);
+    }
 }
